@@ -189,7 +189,7 @@ class Pix2PixHDModel(BaseModel):
         # VGG feature matching loss
         loss_G_VGG = 0
         if not self.opt.no_vgg_loss:
-            if self.opt.input_nc == 1:
+            if self.opt.input_nc == 1: # for input_nc == 1
                 image_shape = fake_image.shape
                 fake_image3 = torch.zeros([image_shape[0],3,image_shape[2],image_shape[3]])
                 real_image3 = torch.zeros([image_shape[0],3,image_shape[2],image_shape[3]])
