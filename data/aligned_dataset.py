@@ -43,7 +43,7 @@ class AlignedDataset(BaseDataset):
             transform_A = get_transform(self.opt, params, grayscale=(self.opt.input_nc == 1)) # for input_nc == 1
             A_tensor = transform_A(A.convert('RGB'))
         else:
-            transform_A = get_transform(self.opt, grayscale=False, params, method=Image.NEAREST, normalize=False) # for input_nc == 1
+            transform_A = get_transform(self.opt, params, grayscale=False, method=Image.NEAREST, normalize=False) # for input_nc == 1
             A_tensor = transform_A(A) * 255.0
 
         B_tensor = inst_tensor = feat_tensor = 0
